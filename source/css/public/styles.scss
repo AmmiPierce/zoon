@@ -99,6 +99,12 @@ a {
             }
         }
     }
+    @media (max-width:590px) {
+        .item{
+            margin-right: 0;
+            width: 100%;
+        }
+    }
 }
 
 .cards{
