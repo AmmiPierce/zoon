@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+		<script>svg4everybody();</script>
+		<title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-bell-icon-dims { width: 12px; height: 15px; }
+	.svg-check-icon-dims { width: 9px; height: 10px; }
+	.svg-comments-icon-dims { width: 40px; height: 40px; }
+	.svg-dots-dims { width: 4px; height: 18px; }
+	.svg-loader-dims { width: 12px; height: 17px; }
+	.svg-noanswer-icon-dims { width: 40px; height: 40px; }
+	.svg-spinner-icon-dims { width: 38px; height: 38px; }
+	.svg-star-icon-dims { width: 16px; height: 15px; }
+</style>
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+	
+<!--
+	
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+		<symbol viewBox="0 0 12 15" id="bell-icon" xmlns="http://www.w3.org/2000/svg"><path d="M4.673 12.958c0 .691.615 1.25 1.375 1.25s1.375-.559 1.375-1.25h-2.75zM6.05 3.087c1.863 0 3.375 1.493 3.375 3.333v4.667h-6.75V6.42c0-1.84 1.512-3.333 3.375-3.333zM6 0c-.553 0-1 .453-1 1.014v.79c-2.093.46-3.667 2.351-3.667 4.615v4.054L0 11.824v.676h12v-.676l-1.333-1.351V6.419c0-2.264-1.574-4.155-3.667-4.615v-.79C7 .453 6.553 0 6 0z" fill="#FFF" fill-rule="nonzero"/></symbol>
+		<symbol viewBox="0 0 9 10" id="check-icon" xmlns="http://www.w3.org/2000/svg"><path d="M2.814 9.17L8.25 1.816v-.29L2.84 8.902.5 5.894v.277l2.314 3z" stroke="#222" fill="none" fill-rule="evenodd"/></symbol>
+		<symbol viewBox="0 0 40 40" id="comments-icon" xmlns="http://www.w3.org/2000/svg"><path d="M40 4c-.02-2.2-1.8-4-4-4H4C1.8 0 0 1.8 0 4v24c0 2.2 1.8 4 4 4h28l8 8V4zm-8 20H8v-4h24v4zm0-6H8v-4h24v4zm0-6H8V8h24v4z" fill="#58329E" fill-rule="nonzero"/></symbol>
+		<symbol viewBox="0 0 4 18" id="dots" xmlns="http://www.w3.org/2000/svg"><g fill="#8795A4" fill-rule="evenodd" opacity=".4"><circle cx="2" cy="2" r="2"/><circle cx="2" cy="9" r="2"/><circle cx="2" cy="16" r="2"/></g></symbol>
+		<symbol viewBox="0 0 12 17" id="loader" xmlns="http://www.w3.org/2000/svg"><path d="M6 3.75V6l3-3-3-3v2.25c-3.315 0-6 2.685-6 6 0 1.177.345 2.273.93 3.195l1.095-1.095a4.403 4.403 0 0 1-.525-2.1c0-2.482 2.018-4.5 4.5-4.5zm5.07 1.305L9.975 6.15c.33.63.525 1.342.525 2.1 0 2.483-2.017 4.5-4.5 4.5V10.5l-3 3 3 3v-2.25c3.315 0 6-2.685 6-6a5.948 5.948 0 0 0-.93-3.195z" fill="#000" fill-rule="nonzero"/></symbol>
+		<symbol viewBox="0 0 40 40" id="noanswer-icon" xmlns="http://www.w3.org/2000/svg"><path d="M36 0H4C1.8 0 .02 1.8.02 4L0 40l8-8h28c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zM22 24h-4v-4h4v4zm0-8h-4V8h4v8z" fill="#58329E" fill-rule="nonzero"/></symbol>
+		<symbol viewBox="0 0 38 38" id="spinner-icon" xmlns="http://www.w3.org/2000/svg"><path d="M32.415 5.581C28.97 2.137 24.24 0 18.988 0 8.484 0 0 8.503 0 19c0 10.498 8.484 19 18.988 19 8.864 0 16.255-6.056 18.37-14.25h-4.943c-1.948 5.534-7.224 9.5-13.427 9.5C11.122 33.25 4.73 26.861 4.73 19S11.122 4.75 18.99 4.75c3.944 0 7.461 1.639 10.028 4.227l-7.652 7.648H38V0l-5.585 5.581z" fill="#58329E" fill-rule="evenodd"/></symbol>
+		<symbol viewBox="0 0 16 15" id="star-icon" xmlns="http://www.w3.org/2000/svg"><path d="M15.21 5.059l-4.124-.446a.702.702 0 0 1-.555-.396L8.83.52c-.32-.693-1.313-.693-1.633 0L5.48 4.217a.693.693 0 0 1-.556.396L.802 5.06a.869.869 0 0 0-.505 1.519l3.063 2.74c.185.165.27.412.219.643l-.842 3.978c-.151.743.657 1.32 1.33.941l3.602-2.014a.73.73 0 0 1 .69 0l3.602 2.014c.674.38 1.482-.198 1.33-.94L12.45 9.96a.63.63 0 0 1 .202-.643l3.064-2.74c.555-.496.252-1.436-.505-1.519z" fill="none" fill-rule="evenodd"/></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+		
+		<header>
+			<h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank">support inline SVG</a> for these techniques to work.</li>
+				<li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode" target="_blank">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+				<li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">SVG for Everybody</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+	
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+
+-->
+
+			<h3>A) Inline SVG with embedded sprite</h3>
+			<ul>
+
+				<li title="bell-icon">
+					<div class="icon-box">
+						
+						<!-- bell-icon -->
+						<svg class="svg-bell-icon-dims">
+							<use xlink:href="#bell-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>bell-icon</h2>
+				</li>
+				<li title="check-icon">
+					<div class="icon-box">
+						
+						<!-- check-icon -->
+						<svg class="svg-check-icon-dims">
+							<use xlink:href="#check-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>check-icon</h2>
+				</li>
+				<li title="comments-icon">
+					<div class="icon-box">
+						
+						<!-- comments-icon -->
+						<svg class="svg-comments-icon-dims">
+							<use xlink:href="#comments-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>comments-icon</h2>
+				</li>
+				<li title="dots">
+					<div class="icon-box">
+						
+						<!-- dots -->
+						<svg class="svg-dots-dims">
+							<use xlink:href="#dots"></use>
+						</svg>
+						
+					</div>
+					<h2>dots</h2>
+				</li>
+				<li title="loader">
+					<div class="icon-box">
+						
+						<!-- loader -->
+						<svg class="svg-loader-dims">
+							<use xlink:href="#loader"></use>
+						</svg>
+						
+					</div>
+					<h2>loader</h2>
+				</li>
+				<li title="noanswer-icon">
+					<div class="icon-box">
+						
+						<!-- noanswer-icon -->
+						<svg class="svg-noanswer-icon-dims">
+							<use xlink:href="#noanswer-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>noanswer-icon</h2>
+				</li>
+				<li title="spinner-icon">
+					<div class="icon-box">
+						
+						<!-- spinner-icon -->
+						<svg class="svg-spinner-icon-dims">
+							<use xlink:href="#spinner-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>spinner-icon</h2>
+				</li>
+				<li title="star-icon">
+					<div class="icon-box">
+						
+						<!-- star-icon -->
+						<svg class="svg-star-icon-dims">
+							<use xlink:href="#star-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>star-icon</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+	
+B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+-->
+
+			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
+			<ul>
+				
+				<li title="bell-icon">
+					<div class="icon-box">
+						
+						<!-- bell-icon -->
+						<svg class="svg-bell-icon-dims">
+							<use xlink:href="sprite.svg#bell-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>bell-icon</h2>
+				</li>
+				<li title="check-icon">
+					<div class="icon-box">
+						
+						<!-- check-icon -->
+						<svg class="svg-check-icon-dims">
+							<use xlink:href="sprite.svg#check-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>check-icon</h2>
+				</li>
+				<li title="comments-icon">
+					<div class="icon-box">
+						
+						<!-- comments-icon -->
+						<svg class="svg-comments-icon-dims">
+							<use xlink:href="sprite.svg#comments-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>comments-icon</h2>
+				</li>
+				<li title="dots">
+					<div class="icon-box">
+						
+						<!-- dots -->
+						<svg class="svg-dots-dims">
+							<use xlink:href="sprite.svg#dots"></use>
+						</svg>
+						
+					</div>
+					<h2>dots</h2>
+				</li>
+				<li title="loader">
+					<div class="icon-box">
+						
+						<!-- loader -->
+						<svg class="svg-loader-dims">
+							<use xlink:href="sprite.svg#loader"></use>
+						</svg>
+						
+					</div>
+					<h2>loader</h2>
+				</li>
+				<li title="noanswer-icon">
+					<div class="icon-box">
+						
+						<!-- noanswer-icon -->
+						<svg class="svg-noanswer-icon-dims">
+							<use xlink:href="sprite.svg#noanswer-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>noanswer-icon</h2>
+				</li>
+				<li title="spinner-icon">
+					<div class="icon-box">
+						
+						<!-- spinner-icon -->
+						<svg class="svg-spinner-icon-dims">
+							<use xlink:href="sprite.svg#spinner-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>spinner-icon</h2>
+				</li>
+				<li title="star-icon">
+					<div class="icon-box">
+						
+						<!-- star-icon -->
+						<svg class="svg-star-icon-dims">
+							<use xlink:href="sprite.svg#star-icon"></use>
+						</svg>
+						
+					</div>
+					<h2>star-icon</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Wed, 29 May 2019 00:23:43 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

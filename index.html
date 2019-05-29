@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Zoon Test</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="stylesheet" href="docs/public/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+    <div id="LZ" class="LZ">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <symbol viewBox="0 0 12 15" id="bell-icon" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M4.673 12.958c0 .691.615 1.25 1.375 1.25s1.375-.559 1.375-1.25h-2.75zM6.05 3.087c1.863 0 3.375 1.493 3.375 3.333v4.667h-6.75V6.42c0-1.84 1.512-3.333 3.375-3.333zM6 0c-.553 0-1 .453-1 1.014v.79c-2.093.46-3.667 2.351-3.667 4.615v4.054L0 11.824v.676h12v-.676l-1.333-1.351V6.419c0-2.264-1.574-4.155-3.667-4.615v-.79C7 .453 6.553 0 6 0z"
+                    fill="#FFF" fill-rule="nonzero" />
+            </symbol>
+            <symbol viewBox="0 0 9 10" id="check-icon" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.814 9.17L8.25 1.816v-.29L2.84 8.902.5 5.894v.277l2.314 3z" fill="none"
+                    fill-rule="evenodd" />
+            </symbol>
+            <symbol viewBox="0 0 40 40" id="comments-icon" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M40 4c-.02-2.2-1.8-4-4-4H4C1.8 0 0 1.8 0 4v24c0 2.2 1.8 4 4 4h28l8 8V4zm-8 20H8v-4h24v4zm0-6H8v-4h24v4zm0-6H8V8h24v4z"
+                    fill="#58329E" fill-rule="nonzero" />
+            </symbol>
+            <symbol viewBox="0 0 4 18" id="dots" xmlns="http://www.w3.org/2000/svg">
+                <g fill-rule="evenodd">
+                    <circle cx="2" cy="2" r="2" />
+                    <circle cx="2" cy="9" r="2" />
+                    <circle cx="2" cy="16" r="2" />
+                </g>
+            </symbol>
+            <symbol viewBox="0 0 12 17" id="loader" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M6 3.75V6l3-3-3-3v2.25c-3.315 0-6 2.685-6 6 0 1.177.345 2.273.93 3.195l1.095-1.095a4.403 4.403 0 0 1-.525-2.1c0-2.482 2.018-4.5 4.5-4.5zm5.07 1.305L9.975 6.15c.33.63.525 1.342.525 2.1 0 2.483-2.017 4.5-4.5 4.5V10.5l-3 3 3 3v-2.25c3.315 0 6-2.685 6-6a5.948 5.948 0 0 0-.93-3.195z"
+                    fill="#000" fill-rule="nonzero" />
+            </symbol>
+            <symbol viewBox="0 0 40 40" id="noanswer-icon" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M36 0H4C1.8 0 .02 1.8.02 4L0 40l8-8h28c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zM22 24h-4v-4h4v4zm0-8h-4V8h4v8z"
+                    fill="#58329E" fill-rule="nonzero" />
+            </symbol>
+            <symbol viewBox="0 0 38 38" id="spinner-icon" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M32.415 5.581C28.97 2.137 24.24 0 18.988 0 8.484 0 0 8.503 0 19c0 10.498 8.484 19 18.988 19 8.864 0 16.255-6.056 18.37-14.25h-4.943c-1.948 5.534-7.224 9.5-13.427 9.5C11.122 33.25 4.73 26.861 4.73 19S11.122 4.75 18.99 4.75c3.944 0 7.461 1.639 10.028 4.227l-7.652 7.648H38V0l-5.585 5.581z"
+                    fill="#58329E" fill-rule="evenodd" />
+            </symbol>
+            <symbol viewBox="0 0 16 15" id="star-icon" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M15.21 5.059l-4.124-.446a.702.702 0 0 1-.555-.396L8.83.52c-.32-.693-1.313-.693-1.633 0L5.48 4.217a.693.693 0 0 1-.556.396L.802 5.06a.869.869 0 0 0-.505 1.519l3.063 2.74c.185.165.27.412.219.643l-.842 3.978c-.151.743.657 1.32 1.33.941l3.602-2.014a.73.73 0 0 1 .69 0l3.602 2.014c.674.38 1.482-.198 1.33-.94L12.45 9.96a.63.63 0 0 1 .202-.643l3.064-2.74c.555-.496.252-1.436-.505-1.519z"
+                    fill-rule="evenodd" />
+            </symbol>
+        </svg>
+    </div>
+    
+    <div class="wrapper">
+        <section class="dashboard clearfix">
+            <div class="item">
+                <div class="value">165</div>
+                <div class="text">отзывов</div>
+                <svg><use xlink:href="#comments-icon"></use></svg>
+            </div>
+            <div class="item">
+                <div class="value">21</div>
+                <div class="text">неотвеченный отзыв</div>
+                <svg><use xlink:href="#noanswer-icon"></use></svg>
+            </div>
+            <div class="item">
+                <div class="value">50</div>
+                <div class="text">обновлений</div>
+                <svg><use xlink:href="#spinner-icon"></use></svg>
+            </div>
+            <div class="item">
+                <div class="value">4,5</div>
+                <div class="text">средний рейтинг</div>
+                <svg><use xlink:href="#star-icon"></use></svg>
+            </div>
+        </section>
+        <section class="cards">
+            <div class="item sync">
+                <div class="top">
+                    <div class="name">Google</div>
+                    <ul>
+                        <li>•&#8194;все 30 заведений настроены</li>
+                    </ul>
+                </div>
+                <div class="mid">
+                    <ul>
+                        <li class="complete"><svg><use xlink:href="#check-icon"></use></svg> Синхронизировано</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Инфа</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Прайс</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Фото</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Акции</li>
+                    </ul>
+                </div>
+                <div class="bottom clearfix rated">
+                    <div class="rate"><svg><use xlink:href="#star-icon"></use></svg> 4,5 из 5</div>
+                    <ul>
+                        <li>•&#8194;198 отзывов, 15 неотвеченных</li>
+                    </ul>
+                    <div class="status">
+                        <div class="update">2 обновления</div>
+                    </div>
+                    <div class="disabled-text">Площадка отключена</div>
+                </div>
+                <div class="enable-block">
+                    <svg>
+                        <use xlink:href="#dots"></use>
+                    </svg>
+                    <div class="enable-btn js-enable-btn">Выключить</div>
+                </div>
+            </div>
+            <div class="item sync">
+                <div class="top">
+                    <div class="name">Flado</div>
+                    <ul>
+                        <li>•&#8194;30 заведений</li>
+                        <li>•&#8194;4 настроено</li>
+                        <li>•&#8194;20 в поиске</li>
+                    </ul>
+                </div>
+                <div class="mid">
+                    <ul>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Создаём 3 страницы</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Инфа</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Прайс</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Фото</li>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Акции</li>
+                    </ul>
+                </div>
+                <div class="bottom clearfix">
+                    <div class="rate"><svg><use xlink:href="#star-icon"></use></svg> Портал без рейтинга</div>
+                    <div class="status">
+                        <div class="wait"><svg><use xlink:href="#bell-icon"></use></svg> Требует действий</div>
+                    </div>
+                    <div class="disabled-text">Площадка отключена</div>
+                </div>
+                <div class="enable-block">
+                    <svg>
+                        <use xlink:href="#dots"></use>
+                    </svg>
+                    <div class="enable-btn js-enable-btn">Выключить</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <div class="name">2Gis</div>
+                </div>
+                <div class="mid">
+                    <ul>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Создаём 3 страницы</li>
+                    </ul>
+                </div>
+                <div class="bottom clearfix">
+                    <ul>
+                        <li>Поиск заведений: 15 из 78…</li>
+                    </ul>
+                    <div class="status">
+                        <div class="wait"><svg><use xlink:href="#bell-icon"></use></svg> Требует действий</div>
+                    </div>
+                    <div class="disabled-text">Площадка отключена</div>
+                </div>
+                <div class="enable-block">
+                    <svg>
+                        <use xlink:href="#dots"></use>
+                    </svg>
+                    <div class="enable-btn js-enable-btn">Выключить</div>
+                </div>
+            </div>
+            <div class="item disabled">
+                <div class="top">
+                    <div class="name">Yell</div>
+                </div>
+                <div class="mid">
+                    <ul>
+                        <li><svg><use xlink:href="#check-icon"></use></svg> Создаём 3 страницы</li>
+                    </ul>
+                </div>
+                <div class="bottom clearfix">
+                    <ul>
+                        <li>Поиск заведений: 15 из 78…</li>
+                    </ul>
+                    <div class="status">
+                        <div class="wait"><svg><use xlink:href="#bell-icon"></use></svg> Требует действий</div>
+                    </div>
+                    <div class="disabled-text">Площадка отключена</div>
+                </div>
+                <div class="enable-block">
+                    <svg><use xlink:href="#dots"></use></svg>
+                    <div class="enable-btn js-enable-btn">Включить</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var itemEnableBtn = document.querySelectorAll('.js-enable-btn');
+
+        itemEnableBtn.forEach(function (btn) {
+            btn.addEventListener("click", function (e) {
+                var item = this.closest('.item');
+                if (item.classList.contains('disabled')) {
+                    item.classList.remove('disabled');
+                    this.innerHTML = 'Выключить';
+                } else {
+                    item.classList.add('disabled');
+                    this.innerHTML = 'Включить';
+                }
+            }, false);
+        });
+    </script>
+</body>
+</html>
