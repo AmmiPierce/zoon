@@ -273,6 +273,25 @@ a {
                     opacity: 1;
                 }
             }
+            @media (max-width:500px) {
+                .enable-btn{
+                    width: 50px;
+                    font-size: 0;
+                    right: 0;
+                    top: 0;
+                    transform: translateY(0);
+                }
+                &:hover{
+                    svg{
+                        fill: #BBBCC4;
+                        opacity: .4;
+                    }
+                    .enable-btn{
+                        transform: translateY(0);
+                        opacity: 0;
+                    }
+                }
+            }
         }
         &.sync{
             border-left: 4px solid #5A39A7;
