@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Тестовое задание №2</title>
+</head>
+<body>
+
+<ol>
+	<li>Делаем второе задание используя вёрстку из первого.</li>
+	<li>За основу берём ЖС который представлен в коде страницы, но модифицировать (если нужно) его можно как угодно.</li>
+	<li>Берём за образец блок Google и генерируем все блоки по массиву jsonData</li>
+	<li>Раз в какое-то время в функцию update приходит новая информация о каком-то одном элементе. Нужно обновить данные в элементе, для которого пришло обновление и обновить счётчики из п.3.</li>
+	<li>Обновлять глобальные счётчики находящиеся в начале макета. Все данные просто суммируются, рейтинг считается как сумма/кол-во</li>
+	<li>При изменении state, должен поменяться цвет бордера слева и измениться порядок элементов. Порядок должен быть как в массиве states. Т.е. сначала все фиолетовые, потом все оранжевые, потом все серые)</li>
+</ol>
+
+<script>
+	(function(){
+		var states = ['purple', 'orange', 'gray'];
+
+		function r(min, max) {
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+
+		function getRandomObject() {
+			var obj = jsonData[Math.floor(Math.random() * jsonData.length)];
+			Object.assign(obj, {
+				state: states[Math.floor(Math.random() * states.length)],
+				rating: r(1, 5),
+				review: r(0, 200),
+				reply: r(0, 20),
+				update: r(0, 5)
+			});
+
+			return obj;
+		}
+
+		var jsonData = [{
+			id: 1,
+			title: 'Google',
+			state: 'purple',
+			rating: 5, // рейтинг
+			review: 4, // отзывы
+			reply: 3, // неотвеченные
+			update: 2 // обновления
+		},{
+			id: 2,
+			title: 'Yandex',
+			state: 'gray',
+			rating: 4,
+			review: 3,
+			reply: 2,
+			update: 1
+		},{
+			id: 3,
+			title: 'Rambler',
+			state: 'orange',
+			rating: 3,
+			review: 2,
+			reply: 1,
+			update: 0
+		},{
+			id: 4,
+			title: '2gis',
+			state: 'gray',
+			rating: 2,
+			review: 1,
+			reply: 0,
+			update: 0
+		},{
+			id: 5,
+			title: 'Waze',
+			state: 'gray',
+			rating: 1,
+			review: 0,
+			reply: 0,
+			update: 0
+		}];
+
+		setInterval(function(){
+			var obj = getRandomObject();
+			update(obj);
+		}, r(10, 30) * 1000);
+
+
+		function update(obj) {
+			// @TODO обновлять состояние элементов + обновлять глобальные счётчики
+			console.log(obj);
+		}
+	}());
+</script>
+</body>
+</html>

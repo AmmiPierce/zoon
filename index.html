@@ -57,159 +57,214 @@
     
     <div class="wrapper">
         <section class="dashboard clearfix">
-            <div class="item">
+            <div class="item" id="counter-review">
                 <div class="value">165</div>
                 <div class="text">отзывов</div>
                 <svg><use xlink:href="#comments-icon"></use></svg>
             </div>
-            <div class="item">
+            <div class="item" id="counter-reply">
                 <div class="value">21</div>
                 <div class="text">неотвеченный отзыв</div>
                 <svg><use xlink:href="#noanswer-icon"></use></svg>
             </div>
-            <div class="item">
+            <div class="item" id="counter-update">
                 <div class="value">50</div>
                 <div class="text">обновлений</div>
                 <svg><use xlink:href="#spinner-icon"></use></svg>
             </div>
-            <div class="item">
+            <div class="item" id="counter-rating">
                 <div class="value">4,5</div>
                 <div class="text">средний рейтинг</div>
                 <svg><use xlink:href="#star-icon"></use></svg>
             </div>
         </section>
-        <section class="cards">
-            <div class="item sync">
-                <div class="top">
-                    <div class="name">Google</div>
-                    <ul>
-                        <li>•&#8194;все 30 заведений настроены</li>
-                    </ul>
-                </div>
-                <div class="mid">
-                    <ul>
-                        <li class="complete"><svg><use xlink:href="#check-icon"></use></svg> Синхронизировано</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Инфа</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Прайс</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Фото</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Акции</li>
-                    </ul>
-                </div>
-                <div class="bottom clearfix rated">
-                    <div class="rate"><svg><use xlink:href="#star-icon"></use></svg> 4,5 из 5</div>
-                    <ul>
-                        <li>•&#8194;198 отзывов, 15 неотвеченных</li>
-                    </ul>
-                    <div class="status">
-                        <div class="update">2 обновления</div>
-                    </div>
-                    <div class="disabled-text">Площадка отключена</div>
-                </div>
-                <div class="enable-block">
-                    <svg>
-                        <use xlink:href="#dots"></use>
-                    </svg>
-                    <div class="enable-btn js-enable-btn">Выключить</div>
-                </div>
-            </div>
-            <div class="item sync">
-                <div class="top">
-                    <div class="name">Flado</div>
-                    <ul>
-                        <li>•&#8194;30 заведений</li>
-                        <li>•&#8194;4 настроено</li>
-                        <li>•&#8194;20 в поиске</li>
-                    </ul>
-                </div>
-                <div class="mid">
-                    <ul>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Создаём 3 страницы</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Инфа</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Прайс</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Фото</li>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Акции</li>
-                    </ul>
-                </div>
-                <div class="bottom clearfix">
-                    <div class="rate"><svg><use xlink:href="#star-icon"></use></svg> Портал без рейтинга</div>
-                    <div class="status">
-                        <div class="wait"><svg><use xlink:href="#bell-icon"></use></svg> Требует действий</div>
-                    </div>
-                    <div class="disabled-text">Площадка отключена</div>
-                </div>
-                <div class="enable-block">
-                    <svg>
-                        <use xlink:href="#dots"></use>
-                    </svg>
-                    <div class="enable-btn js-enable-btn">Выключить</div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="top">
-                    <div class="name">2Gis</div>
-                </div>
-                <div class="mid">
-                    <ul>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Создаём 3 страницы</li>
-                    </ul>
-                </div>
-                <div class="bottom clearfix">
-                    <ul>
-                        <li>Поиск заведений: 15 из 78…</li>
-                    </ul>
-                    <div class="status">
-                        <div class="wait"><svg><use xlink:href="#bell-icon"></use></svg> Требует действий</div>
-                    </div>
-                    <div class="disabled-text">Площадка отключена</div>
-                </div>
-                <div class="enable-block">
-                    <svg>
-                        <use xlink:href="#dots"></use>
-                    </svg>
-                    <div class="enable-btn js-enable-btn">Выключить</div>
-                </div>
-            </div>
-            <div class="item disabled">
-                <div class="top">
-                    <div class="name">Yell</div>
-                </div>
-                <div class="mid">
-                    <ul>
-                        <li><svg><use xlink:href="#check-icon"></use></svg> Создаём 3 страницы</li>
-                    </ul>
-                </div>
-                <div class="bottom clearfix">
-                    <ul>
-                        <li>Поиск заведений: 15 из 78…</li>
-                    </ul>
-                    <div class="status">
-                        <div class="wait"><svg><use xlink:href="#bell-icon"></use></svg> Требует действий</div>
-                    </div>
-                    <div class="disabled-text">Площадка отключена</div>
-                </div>
-                <div class="enable-block">
-                    <svg><use xlink:href="#dots"></use></svg>
-                    <div class="enable-btn js-enable-btn">Включить</div>
-                </div>
-            </div>
+        <section class="cards" id="cards">
+            
         </section>
     </div>
 
     <script>
-        var itemEnableBtn = document.querySelectorAll('.js-enable-btn');
+        (function () {
+            var states = ['purple', 'orange', 'gray'];
 
-        itemEnableBtn.forEach(function (btn) {
-            btn.addEventListener("click", function (e) {
-                var item = this.closest('.item');
-                if (item.classList.contains('disabled')) {
-                    item.classList.remove('disabled');
-                    this.innerHTML = 'Выключить';
+            function r(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            function getRandomObject() {
+                var obj = jsonData[Math.floor(Math.random() * jsonData.length)];
+                Object.assign(obj, {
+                    state: states[Math.floor(Math.random() * states.length)],
+                    rating: r(1, 5),
+                    review: r(0, 200),
+                    reply: r(0, 20),
+                    update: r(0, 5)
+                });
+
+                return obj;
+            }
+
+            var jsonData = [{
+                id: 1,
+                title: 'Google',
+                state: 'purple',
+                rating: 5, // рейтинг
+                review: 4, // отзывы
+                reply: 3, // неотвеченные
+                update: 2 // обновления
+            }, {
+                id: 2,
+                title: 'Yandex',
+                state: 'gray',
+                rating: 4,
+                review: 3,
+                reply: 2,
+                update: 1
+            }, {
+                id: 3,
+                title: 'Rambler',
+                state: 'orange',
+                rating: 3,
+                review: 2,
+                reply: 1,
+                update: 0
+            }, {
+                id: 4,
+                title: '2gis',
+                state: 'gray',
+                rating: 2,
+                review: 1,
+                reply: 0,
+                update: 0
+            }, {
+                id: 5,
+                title: 'Waze',
+                state: 'gray',
+                rating: 1,
+                review: 0,
+                reply: 0,
+                update: 0
+            }];
+
+            var cards_container = document.getElementById('cards'),
+                main_counters = [
+                    {
+                        class: 'counter-review',
+                        desc: ['отзыв', 'отзыва', 'отзывов']
+                    },
+                    {
+                        class: 'counter-reply',
+                        desc: ['неотвеченный отзыв','неотвеченных отзыва','неотвеченных отзывов']
+                    },
+                    {
+                        class: 'counter-update',
+                        desc: ['обновление', 'обновления', 'обновлений']
+                    },
+                    {
+                        class: 'counter-rating'
+                    }
+                ]
+                review_desc = ['отзыв', 'отзыва', 'отзывов'],
+                reply_desc = ['неотвеченный', 'неотвеченных', 'неотвеченных'],
+                update_desc = ['обновление', 'обновления', 'обновлений'];
+
+            jsonData.forEach(function(item){
+                var card = document.createElement('div');
+                card.setAttribute('class', 'card ' + item.state);
+                card.setAttribute('id', 'card-' + item.id);
+                card.innerHTML = `
+                    <div class="top">
+                        <div class="name">${item.title}</div>
+                        <ul>
+                            <li>•&#8194;все 30 заведений настроены</li>
+                        </ul>
+                    </div>
+                    <div class="mid">
+                        <ul>
+                            <li class="complete"><svg><use xlink:href="#check-icon"></use></svg> Синхронизировано</li>
+                            <li><svg><use xlink:href="#check-icon"></use></svg> Инфа</li>
+                            <li><svg><use xlink:href="#check-icon"></use></svg> Прайс</li>
+                            <li><svg><use xlink:href="#check-icon"></use></svg> Фото</li>
+                            <li><svg><use xlink:href="#check-icon"></use></svg> Акции</li>
+                        </ul>
+                    </div>
+                    <div class="bottom clearfix rated">
+                        <div class="rate"><svg><use xlink:href="#star-icon"></use></svg> <span class="counter-rating">${item.rating}</span> из 5</div>
+                        <ul>
+                            <li>•&#8194; <span class="counter-review">${item.review + ' ' + num2str(item.review, review_desc)}</span>, <span class="counter-reply">${item.reply + ' ' + num2str(item.reply, reply_desc)}</span></li>
+                        </ul>
+                        <div class="status">
+                            <div class="update counter-update">${item.update + ' ' + num2str(item.update, update_desc)}</div>
+                        </div>
+                        <div class="disabled-text">Площадка отключена</div>
+                    </div>
+                    <div class="enable-block">
+                        <svg>
+                            <use xlink:href="#dots"></use>
+                        </svg>
+                        <div class="enable-btn js-enable-btn">Выключить</div>
+                    </div>
+                `;
+                cards_container.appendChild(card);
+            });
+
+            updateMainCounters();
+
+            setInterval(function () {
+                var obj = getRandomObject();
+                update(obj);
+            }, r(10, 30) * 1000);
+
+
+            function update(obj) {
+                // @TODO обновлять состояние элементов + обновлять глобальные счётчики
+                console.log(obj);
+                var item = document.getElementById('card-' + obj.id);
+                item.setAttribute('class', 'card ' + obj.state);
+                item.getElementsByClassName('counter-review')[0].innerHTML = obj.review + ' ' + num2str(obj.review, review_desc);
+                item.getElementsByClassName('counter-reply')[0].innerHTML = obj.reply + ' ' + num2str(obj.reply, reply_desc);
+                item.getElementsByClassName('counter-update')[0].innerHTML = obj.update + ' ' + num2str(obj.update, update_desc);
+                item.getElementsByClassName('counter-rating')[0].innerHTML = obj.rating;
+                updateMainCounters();
+            }
+
+            function sumCounters(counter){
+                var sum = 0;
+                document.querySelectorAll('.' + counter).forEach(function(item){
+                    sum += parseInt(item.innerHTML);
+                });
+                if (counter === 'counter-rating'){
+                    sum = sum / document.querySelectorAll('.card').length;;
+                    return Math.round(sum * 100) / 100;
                 } else {
-                    item.classList.add('disabled');
-                    this.innerHTML = 'Включить';
+                    return sum;
                 }
-            }, false);
-        });
+            }
+
+            function updateMainCounters(){
+                for (var i = 0; i < main_counters.length; i++){
+                    document.getElementById(main_counters[i].class).getElementsByClassName('value')[0].innerHTML = sumCounters(main_counters[i].class);
+                    if (main_counters[i].class !== 'counter-rating'){
+                        document.getElementById(main_counters[i].class).getElementsByClassName('text')[0].innerHTML = num2str(sumCounters(main_counters[i].class), main_counters[i].desc);
+                    }
+                }
+            }
+
+            function num2str(n, text_forms) {
+                n = Math.abs(n) % 100;
+                var n1 = n % 10;
+                if (n > 10 && n < 20) {
+                    return text_forms[2];
+                }
+                if (n1 > 1 && n1 < 5) {
+                    return text_forms[1];
+                }
+                if (n1 == 1) {
+                    return text_forms[0];
+                }
+                return text_forms[2];
+            }
+        }());
     </script>
 </body>
 </html>

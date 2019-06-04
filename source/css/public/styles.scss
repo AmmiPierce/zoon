@@ -109,7 +109,9 @@ a {
 
 .cards{
     padding: 35px 0;
-    .item{
+    display: flex;
+    flex-direction: column;
+    .card{
         border: 1px solid #E6ECF2;
         border-left: 4px solid #CEDAE6;
         border-radius: 4px;
@@ -293,8 +295,17 @@ a {
                 }
             }
         }
-        &.sync{
+        &.purple{
             border-left: 4px solid #5A39A7;
+            order: 1;
+        }
+        &.orange{
+            border-left: 4px solid #FFAA30;
+            order: 2;
+        }
+        &.gray{
+            border-left: 4px solid #CEDAE6;
+            order: 3;
         }
         &.disabled{
             color: #BBBCC4;
